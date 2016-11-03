@@ -9,9 +9,7 @@ install:
   - command -v ghp || cargo install ghp
 
 script:
-  - mdbook build
-  - echo User-agent: * > book/robots.txt
-  - echo Disallow: / >> book/robots.txt
+  - sh ci/script.sh
 
 after_success:
   - if [ $TRAVIS_PULL_REQUEST = false ]; then
