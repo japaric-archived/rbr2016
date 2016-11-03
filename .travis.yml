@@ -10,6 +10,8 @@ install:
 
 script:
   - mdbook build
+  - echo 'User-agent: *' > book/robots.txt
+  - echo 'Disallow: /' >> book/robots.txt
 
 after_success:
   - if [ $TRAVIS_PULL_REQUEST = false ]; then
