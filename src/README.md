@@ -4,6 +4,13 @@
 
 > [Workshop] Bare metal: Programming ARM microcontrollers in Rust
 
+> **IMPORTANT** This the material I presented at the Rust Belt Rust conference
+> in October of 2016. For historical reasons, this page will remain unchanged.
+> If you are interested in a continuation of this material check the
+> [rust-discovery] project.
+
+[rust-discovery]: https://japaric.github.io/rust-discovery
+
 ## What's a microcontroller?
 
 A microcontroller is a *system* on a chip. Whereas your laptop is made up of
