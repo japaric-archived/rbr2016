@@ -6,10 +6,10 @@
 
 > **IMPORTANT** This the material I presented at the Rust Belt Rust conference
 > in October of 2016. For historical reasons, this page will remain unchanged.
-> If you are interested in a continuation of this material check the
-> [rust-discovery] project.
+> If you are interested in a continuation of this material check my
+> [Discovery] book.
 
-[rust-discovery]: https://japaric.github.io/rust-discovery
+[Discovery]: https://japaric.github.io/discovery
 
 ## What's a microcontroller?
 
