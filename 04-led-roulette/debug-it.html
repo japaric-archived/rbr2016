@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="README.html">Introduction</a></li><li><a href="01-installation-instructions/README.html"><strong>1.</strong> Installation instructions</a></li><li><ul class="section"><li><a href="01-installation-instructions/linux.html"><strong>1.1.</strong> Linux</a></li><li><a href="01-installation-instructions/windows.html"><strong>1.2.</strong> Windows</a></li><li><a href="01-installation-instructions/macos.html"><strong>1.3.</strong> macOS</a></li></ul></li><li><a href="02-meet-your-hardware/README.html"><strong>2.</strong> Meet your hardware</a></li><li><a href="03-verify-the-installation/README.html"><strong>3.</strong> Verify the installation</a></li><li><a href="04-led-roulette/README.html"><strong>4.</strong> LED roulette</a></li><li><ul class="section"><li><a href="04-led-roulette/build-it.html"><strong>4.1.</strong> Build it</a></li><li><a href="04-led-roulette/flash-it.html"><strong>4.2.</strong> Flash it</a></li><li><a href="04-led-roulette/debug-it.html" class="active"><strong>4.3.</strong> Debug it</a></li><li><a href="04-led-roulette/the-led-and-delay-modules.html"><strong>4.4.</strong> The <code>led</code> and <code>delay</code> modules</a></li><li><a href="04-led-roulette/the-challenge.html"><strong>4.5.</strong> The challenge</a></li><li><a href="04-led-roulette/my-solution.html"><strong>4.6.</strong> My solution</a></li></ul></li><li><a href="05-hello-world/README.html"><strong>5.</strong> Hello, world!</a></li><li><ul class="section"><li><a href="05-hello-world/panic.html"><strong>5.1.</strong> <code>panic!</code></a></li></ul></li><li><a href="06-registers/README.html"><strong>6.</strong> Registers</a></li><li><ul class="section"><li><a href="06-registers/rtrm.html"><strong>6.1.</strong> RTRM</a></li><li><a href="06-registers/optimization.html"><strong>6.2.</strong> (mis)Optimization</a></li><li><a href="06-registers/bad-address.html"><strong>6.3.</strong> <code>0xBAAAAAAD</code> address</a></li><li><a href="06-registers/spooky-action-at-a-distance.html"><strong>6.4.</strong> Spooky action at a distance</a></li><li><a href="06-registers/type-safe-manipulation.html"><strong>6.5.</strong> Type safe manipulation</a></li></ul></li><li><a href="07-leds-again/README.html"><strong>7.</strong> LEDs, again</a></li><li><ul class="section"><li><a href="07-leds-again/power.html"><strong>7.1.</strong> Power</a></li><li><a href="07-leds-again/configuration.html"><strong>7.2.</strong> Configuration</a></li></ul></li><li><a href="08-clocks-and-timers/README.html"><strong>8.</strong> Clocks and timers</a></li><li><ul class="section"><li><a href="08-clocks-and-timers/for-loop-delays.html"><strong>8.1.</strong> <code>for</code> loop delays</a></li><li><a href="08-clocks-and-timers/nop.html"><strong>8.2.</strong> NOP</a></li><li><a href="08-clocks-and-timers/one-shot-timer.html"><strong>8.3.</strong> One-shot timer</a></li><li><a href="08-clocks-and-timers/initialization.html"><strong>8.4.</strong> Initialization</a></li><li><a href="08-clocks-and-timers/busy-waiting.html"><strong>8.5.</strong> Busy waiting</a></li><li><a href="08-clocks-and-timers/putting-it-all-together.html"><strong>8.6.</strong> Putting it all together</a></li></ul></li><li><a href="09-serial-communication/README.html"><strong>9.</strong> &quot;Serial&quot; communication</a></li><li><ul class="section"><li><a href="09-serial-communication/nix-tooling.html"><strong>9.1.</strong> *nix tooling</a></li><li><a href="09-serial-communication/windows-tooling.html"><strong>9.2.</strong> Windows tooling</a></li><li><a href="09-serial-communication/loopbacks.html"><strong>9.3.</strong> Loopbacks</a></li></ul></li><li><a href="10-usart/README.html"><strong>10.</strong> USART</a></li><li><ul class="section"><li><a href="10-usart/send-a-single-byte.html"><strong>10.1.</strong> Send a single byte</a></li><li><a href="10-usart/send-a-string.html"><strong>10.2.</strong> Send a string</a></li><li><a href="10-usart/buffer-overrun.html"><strong>10.3.</strong> Buffer overrun</a></li><li><a href="10-usart/uprintln.html"><strong>10.4.</strong> <code>uprintln!</code></a></li><li><a href="10-usart/receive-a-single-byte.html"><strong>10.5.</strong> Receive a single byte</a></li><li><a href="10-usart/echo-server.html"><strong>10.6.</strong> Echo server</a></li><li><a href="10-usart/reverse-a-string.html"><strong>10.7.</strong> Reverse a string</a></li><li><a href="10-usart/my-solution.html"><strong>10.8.</strong> My solution</a></li></ul></li><li><a href="11-bluetooth-setup/README.html"><strong>11.</strong> Bluetooth setup</a></li><li><ul class="section"><li><a href="11-bluetooth-setup/linux.html"><strong>11.1.</strong> Linux</a></li><li><a href="11-bluetooth-setup/loopback.html"><strong>11.2.</strong> Loopback</a></li><li><strong>11.3.</strong> AT commands</li></ul></li><li><a href="12-serial-over-bluetooth/README.html"><strong>12.</strong> Serial over Bluetooth</a></li><li><a href="13-i2c/README.html"><strong>13.</strong> I2C</a></li><li><ul class="section"><li><a href="13-i2c/the-general-protocol.html"><strong>13.1.</strong> The general protocol</a></li><li><a href="13-i2c/lsm303dlhc.html"><strong>13.2.</strong> LSM303DLHC</a></li><li><a href="13-i2c/read-a-single-register.html"><strong>13.3.</strong> Read a single register</a></li><li><a href="13-i2c/the-solution.html"><strong>13.4.</strong> The solution</a></li><li><a href="13-i2c/read-several-registers.html"><strong>13.5.</strong> Read several registers</a></li></ul></li><li><a href="14-led-compass/README.html"><strong>14.</strong> LED compass</a></li><li><ul class="section"><li><a href="14-led-compass/take-1.html"><strong>14.1.</strong> Take 1</a></li><li><a href="14-led-compass/solution-1.html"><strong>14.2.</strong> Solution 1</a></li><li><a href="14-led-compass/take-2.html"><strong>14.3.</strong> Take 2</a></li><li><a href="14-led-compass/solution-2.html"><strong>14.4.</strong> Solution 2</a></li><li><a href="14-led-compass/magnitude.html"><strong>14.5.</strong> Magnitude</a></li><li><a href="14-led-compass/calibration.html"><strong>14.6.</strong> Calibration</a></li></ul></li><li><a href="15-punch-o-meter/README.html"><strong>15.</strong> Punch-o-meter</a></li><li><ul class="section"><li><a href="15-punch-o-meter/gravity-is-up.html"><strong>15.1.</strong> Gravity is up?</a></li><li><a href="15-punch-o-meter/the-challenge.html"><strong>15.2.</strong> The challenge</a></li><li><a href="15-punch-o-meter/my-solution.html"><strong>15.3.</strong> My solution</a></li></ul></li><li><a href="16-async-io-the-future/README.html"><strong>16.</strong> Async IO: The future</a></li><li><ul class="section"><li><a href="16-async-io-the-future/timer.html"><strong>16.1.</strong> Timer</a></li><li><a href="16-async-io-the-future/serial.html"><strong>16.2.</strong> Serial</a></li><li><a href="16-async-io-the-future/the-challenge.html"><strong>16.3.</strong> The challenge</a></li><li><a href="16-async-io-the-future/my-solution.html"><strong>16.4.</strong> My solution</a></li><li><a href="16-async-io-the-future/another-challenge.html"><strong>16.5.</strong> Another challenge</a></li><li><a href="16-async-io-the-future/my-other-solution.html"><strong>16.6.</strong> My other solution</a></li><li><a href="16-async-io-the-future/more-challenges.html"><strong>16.7.</strong> More challenges</a></li></ul></li><li><a href="explore.html">What's left for you to explore</a></li><li class="spacer"></li><li class="affix">Appendix</li><li class="affix"><a href="appendix/1-general-troubleshooting/README.html">General troubleshooting</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <h1>Debug it</h1>
+<p>We are already inside a debugging session so let's debug our program.</p>
+<p>After the <code>load</code> command, our program is stopped at its <em>entry point</em>. This is
+indicated by the &quot;Start address 0x8000XXX&quot; part of GDB's output. The entry point
+is the part of a program that a processor / CPU will execute first.</p>
+<p>The starter project I've provided to you has some extra code that runs <em>before</em>
+the <code>main</code> function. At this time, we are not interested in that &quot;pre-main&quot;
+part so let's skip right to the beginning of the <code>main</code> function. We'll do that
+using a breakpoint:</p>
+<pre><code>(gdb) break main
+Breakpoint 1 at 0x80001e6: file $PWD/src/main.rs, line 9.
+
+(gdb) continue
+Continuing.
+Note: automatically using hardware breakpoints for read-only addresses.
+
+Breakpoint 1, led_roulette::main () at $PWD/src/main.rs:7
+7       pub extern &quot;C&quot; fn main() -&gt; ! {
+</code></pre>
+<p>Breakpoints can be used to stop the normal flow of a program. The <code>continue</code>
+command will let the program run free <em>until</em> it reaches a breakpoint. In this
+case, until it reaches the <code>main</code> function because there's a breakpoint there.</p>
+<p>Note that GDB output says &quot;Breakpoint 1&quot;. Remember that our processor can only
+use 6 breakpoints so it's a good idea to pay attention to these messages.</p>
+<p>For a nicer debugging experience, we'll be using GDB's Text User Interface
+(TUI). To enter into that mode, on the GDB shell enter the following command:</p>
+<pre><code>(gdb) layout src
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> Apologies Windows users. The GDB shipped with the GNU ARM Embedded
+Toolchain doesn't support this TUI mode <code>:-(</code>.</p>
+</blockquote>
+<p><img src="assets/gdb-layout-src.png" alt="GDB session" title="GDB TUI" /></p>
+<p>At any point you can leave the TUI mode using the following command:</p>
+<pre><code>(gdb) tui disable
+</code></pre>
+<p>OK. We are now at the beginning of <code>main</code>. We can advance the program statement
+by statement using the <code>step</code> command. So let's use that twice to reach the <code>y = x</code> statement.</p>
+<pre><code>(gdb) step
+11          let x = 42;
+
+(gdb) step
+12          y = x;
+</code></pre>
+<p>If you are not using the TUI mode, on each <code>step</code> call GDB will print back the
+current statement along with its line number.</p>
+<p>We are now &quot;on&quot; the <code>y = x</code> statement; that statement hasn't been executed yet.
+This means that <code>x</code> is initialized but <code>y</code> is not. Let's inspect those
+stack/local variables using the <code>print</code> command:</p>
+<pre><code>(gdb) print x
+$1 = 42
+
+(gdb) print &amp;x
+$2 = (i32 *) 0x20009ff0
+
+(gdb) print y
+$3 = 134218195
+
+(gdb) print &amp;y
+$4 = (i32 *) 0x20009ff4
+</code></pre>
+<p>As expected, <code>x</code> contains the value <code>42</code>. <code>y</code>, however, contains the value
+<code>134218195</code> (?). Because <code>y</code> is uninitialized, it contains some random value.</p>
+<p>The command <code>print &amp;x</code> prints the address of the variable <code>x</code>. The interesting
+bit here is that GDB output shows the type of the reference: <code>i32*</code>, a pointer
+to an <code>i32</code> value. Another interesting thing is that the addresses of <code>x</code> and
+<code>y</code> are very close to each other: just off by <code>4</code>.</p>
+<p>Instead of printing the local variables one by one, you can also use the <code>info locals</code> command:</p>
+<pre><code>(gdb) info locals
+x = 42
+y = 134218195
+</code></pre>
+<p>OK. With another <code>step</code>, we'll be on top of the <code>loop {}</code> statement:</p>
+<pre><code>(gdb) step
+13          loop {}
+</code></pre>
+<p>And <code>y</code> should now be initialized.</p>
+<pre><code>(gdb) print y
+$5 = 42
+</code></pre>
+<p>If we use <code>step</code> again on top of the <code>loop {}</code> statement, we'll get stuck
+because the program will never pass that statement. Instead, we'll switch to the
+disassemble view with the <code>layout asm</code> command and advance one instruction at a
+time using <code>stepi</code>.</p>
+<blockquote>
+<p><strong>NOTE</strong> If you used the <code>step</code> command by mistake and GDB got stuck, you can
+unstuck it by hitting <code>Ctrl+C</code>.</p>
+</blockquote>
+<pre><code>(gdb) layout asm
+</code></pre>
+<p><img src="assets/gdb-layout-asm.png" alt="GDB session" title="GDB disassemble" /></p>
+<p>If you are not using the TUI mode, you can use the <code>disassemble /m</code> command to
+disassemble the program around the line you are currently at.</p>
+<pre><code>(gdb) disassemble /m
+Dump of assembler code for function led_roulette::main:
+9       pub extern &quot;C&quot; fn main() -&gt; ! {
+   0x080001e6 &lt;+0&gt;:     sub     sp, #12
+   0x080001e8 &lt;+2&gt;:     b.n     0x80001ea &lt;led_roulette::main+4&gt;
+
+10          let y;
+11          let x = 42;
+   0x080001ea &lt;+4&gt;:     movs    r0, #42 ; 0x2a
+   0x080001ec &lt;+6&gt;:     str     r0, [sp, #4]
+
+12          y = x;
+   0x080001ee &lt;+8&gt;:     str     r0, [sp, #8]
+
+13
+14          loop {}
+=&gt; 0x080001f0 &lt;+10&gt;:    b.n     0x80001f2 &lt;led_roulette::main+12&gt;
+   0x080001f2 &lt;+12&gt;:    b.n     0x80001f2 &lt;led_roulette::main+12&gt;
+
+End of assembler dump.
+</code></pre>
+<p>See the arrow <code>=&gt;</code>? It shows the instruction the processor will execute next.</p>
+<p>If not inside the TUI mode, on each <code>stepi</code> command GDB will print the
+statement, the line number <em>and</em> the address of the instruction the processor
+will execute next.</p>
+<pre><code>(gdb) stepi
+0x080001f2      13          loop {}
+
+(gdb) stepi
+0x080001f2      13          loop {}
+</code></pre>
+<p>One last trick before we move to something more interesting. Enter the following
+commands into GDB:</p>
+<pre><code>(gdb) monitor reset halt
+Unable to match requested speed 1000 kHz, using 950 kHz
+Unable to match requested speed 1000 kHz, using 950 kHz
+adapter speed: 950 kHz
+target state: halted
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x08000194 msp: 0x2000a000
+
+(gdb) continue
+Continuing.
+
+Breakpoint 1, led_roulette::main () at $PWD/src/main.rs:7
+7       pub extern &quot;C&quot; fn main() -&gt; ! {
+</code></pre>
+<p>We are now back at the beginning of <code>main</code>!</p>
+<p><code>monitor reset halt</code> will reset the microcontroller and stop it right at the
+program entry point. The following <code>continue</code> command will let the program run
+freely until it reaches the <code>main</code> function that has a breakpoint on it.</p>
+<p>This combo is handy when you, by mistake, skipped over a part of the program
+that you were interested in inspecting. You can easily roll back the state of
+your program back to its very beginning.</p>
+<blockquote>
+<p><strong>The fine print</strong>: This <code>reset</code> command doesn't clear or touch RAM. That
+memory will retain its values from the previous run. That shouldn't be a
+problem tough, unless your program behavior depends of the value of
+<em>uninitialized</em> variables but that's the definition of Undefined Behavior
+(UB).</p>
+</blockquote>
+<p>We are done with this debug session. You can end it with the <code>quit</code> command.</p>
+<pre><code>(gdb) quit
+A debugging session is active.
+
+        Inferior 1 [Remote target] will be detached.
+
+Quit anyway? (y or n) y
+Detaching from program: $PWD/target/thumbv7em-none-eabihf/debug/led-roulette, Remote target
+Ending remote debugging.
+</code></pre>
+<p>Don't close OpenOCD though! We'll use it again and again later on. It's better
+just to leave it running.</p>
+<p>What's next? The high level API I promised.</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="04-led-roulette/flash-it.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="04-led-roulette/the-led-and-delay-modules.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="04-led-roulette/flash-it.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="04-led-roulette/the-led-and-delay-modules.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

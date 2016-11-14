@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="README.html">Introduction</a></li><li><a href="01-installation-instructions/README.html"><strong>1.</strong> Installation instructions</a></li><li><ul class="section"><li><a href="01-installation-instructions/linux.html"><strong>1.1.</strong> Linux</a></li><li><a href="01-installation-instructions/windows.html"><strong>1.2.</strong> Windows</a></li><li><a href="01-installation-instructions/macos.html"><strong>1.3.</strong> macOS</a></li></ul></li><li><a href="02-meet-your-hardware/README.html"><strong>2.</strong> Meet your hardware</a></li><li><a href="03-verify-the-installation/README.html"><strong>3.</strong> Verify the installation</a></li><li><a href="04-led-roulette/README.html"><strong>4.</strong> LED roulette</a></li><li><ul class="section"><li><a href="04-led-roulette/build-it.html"><strong>4.1.</strong> Build it</a></li><li><a href="04-led-roulette/flash-it.html"><strong>4.2.</strong> Flash it</a></li><li><a href="04-led-roulette/debug-it.html"><strong>4.3.</strong> Debug it</a></li><li><a href="04-led-roulette/the-led-and-delay-modules.html"><strong>4.4.</strong> The <code>led</code> and <code>delay</code> modules</a></li><li><a href="04-led-roulette/the-challenge.html"><strong>4.5.</strong> The challenge</a></li><li><a href="04-led-roulette/my-solution.html"><strong>4.6.</strong> My solution</a></li></ul></li><li><a href="05-hello-world/README.html"><strong>5.</strong> Hello, world!</a></li><li><ul class="section"><li><a href="05-hello-world/panic.html"><strong>5.1.</strong> <code>panic!</code></a></li></ul></li><li><a href="06-registers/README.html"><strong>6.</strong> Registers</a></li><li><ul class="section"><li><a href="06-registers/rtrm.html"><strong>6.1.</strong> RTRM</a></li><li><a href="06-registers/optimization.html"><strong>6.2.</strong> (mis)Optimization</a></li><li><a href="06-registers/bad-address.html" class="active"><strong>6.3.</strong> <code>0xBAAAAAAD</code> address</a></li><li><a href="06-registers/spooky-action-at-a-distance.html"><strong>6.4.</strong> Spooky action at a distance</a></li><li><a href="06-registers/type-safe-manipulation.html"><strong>6.5.</strong> Type safe manipulation</a></li></ul></li><li><a href="07-leds-again/README.html"><strong>7.</strong> LEDs, again</a></li><li><ul class="section"><li><a href="07-leds-again/power.html"><strong>7.1.</strong> Power</a></li><li><a href="07-leds-again/configuration.html"><strong>7.2.</strong> Configuration</a></li></ul></li><li><a href="08-clocks-and-timers/README.html"><strong>8.</strong> Clocks and timers</a></li><li><ul class="section"><li><a href="08-clocks-and-timers/for-loop-delays.html"><strong>8.1.</strong> <code>for</code> loop delays</a></li><li><a href="08-clocks-and-timers/nop.html"><strong>8.2.</strong> NOP</a></li><li><a href="08-clocks-and-timers/one-shot-timer.html"><strong>8.3.</strong> One-shot timer</a></li><li><a href="08-clocks-and-timers/initialization.html"><strong>8.4.</strong> Initialization</a></li><li><a href="08-clocks-and-timers/busy-waiting.html"><strong>8.5.</strong> Busy waiting</a></li><li><a href="08-clocks-and-timers/putting-it-all-together.html"><strong>8.6.</strong> Putting it all together</a></li></ul></li><li><a href="09-serial-communication/README.html"><strong>9.</strong> &quot;Serial&quot; communication</a></li><li><ul class="section"><li><a href="09-serial-communication/nix-tooling.html"><strong>9.1.</strong> *nix tooling</a></li><li><a href="09-serial-communication/windows-tooling.html"><strong>9.2.</strong> Windows tooling</a></li><li><a href="09-serial-communication/loopbacks.html"><strong>9.3.</strong> Loopbacks</a></li></ul></li><li><a href="10-usart/README.html"><strong>10.</strong> USART</a></li><li><ul class="section"><li><a href="10-usart/send-a-single-byte.html"><strong>10.1.</strong> Send a single byte</a></li><li><a href="10-usart/send-a-string.html"><strong>10.2.</strong> Send a string</a></li><li><a href="10-usart/buffer-overrun.html"><strong>10.3.</strong> Buffer overrun</a></li><li><a href="10-usart/uprintln.html"><strong>10.4.</strong> <code>uprintln!</code></a></li><li><a href="10-usart/receive-a-single-byte.html"><strong>10.5.</strong> Receive a single byte</a></li><li><a href="10-usart/echo-server.html"><strong>10.6.</strong> Echo server</a></li><li><a href="10-usart/reverse-a-string.html"><strong>10.7.</strong> Reverse a string</a></li><li><a href="10-usart/my-solution.html"><strong>10.8.</strong> My solution</a></li></ul></li><li><a href="11-bluetooth-setup/README.html"><strong>11.</strong> Bluetooth setup</a></li><li><ul class="section"><li><a href="11-bluetooth-setup/linux.html"><strong>11.1.</strong> Linux</a></li><li><a href="11-bluetooth-setup/loopback.html"><strong>11.2.</strong> Loopback</a></li><li><strong>11.3.</strong> AT commands</li></ul></li><li><a href="12-serial-over-bluetooth/README.html"><strong>12.</strong> Serial over Bluetooth</a></li><li><a href="13-i2c/README.html"><strong>13.</strong> I2C</a></li><li><ul class="section"><li><a href="13-i2c/the-general-protocol.html"><strong>13.1.</strong> The general protocol</a></li><li><a href="13-i2c/lsm303dlhc.html"><strong>13.2.</strong> LSM303DLHC</a></li><li><a href="13-i2c/read-a-single-register.html"><strong>13.3.</strong> Read a single register</a></li><li><a href="13-i2c/the-solution.html"><strong>13.4.</strong> The solution</a></li><li><a href="13-i2c/read-several-registers.html"><strong>13.5.</strong> Read several registers</a></li></ul></li><li><a href="14-led-compass/README.html"><strong>14.</strong> LED compass</a></li><li><ul class="section"><li><a href="14-led-compass/take-1.html"><strong>14.1.</strong> Take 1</a></li><li><a href="14-led-compass/solution-1.html"><strong>14.2.</strong> Solution 1</a></li><li><a href="14-led-compass/take-2.html"><strong>14.3.</strong> Take 2</a></li><li><a href="14-led-compass/solution-2.html"><strong>14.4.</strong> Solution 2</a></li><li><a href="14-led-compass/magnitude.html"><strong>14.5.</strong> Magnitude</a></li><li><a href="14-led-compass/calibration.html"><strong>14.6.</strong> Calibration</a></li></ul></li><li><a href="15-punch-o-meter/README.html"><strong>15.</strong> Punch-o-meter</a></li><li><ul class="section"><li><a href="15-punch-o-meter/gravity-is-up.html"><strong>15.1.</strong> Gravity is up?</a></li><li><a href="15-punch-o-meter/the-challenge.html"><strong>15.2.</strong> The challenge</a></li><li><a href="15-punch-o-meter/my-solution.html"><strong>15.3.</strong> My solution</a></li></ul></li><li><a href="16-async-io-the-future/README.html"><strong>16.</strong> Async IO: The future</a></li><li><ul class="section"><li><a href="16-async-io-the-future/timer.html"><strong>16.1.</strong> Timer</a></li><li><a href="16-async-io-the-future/serial.html"><strong>16.2.</strong> Serial</a></li><li><a href="16-async-io-the-future/the-challenge.html"><strong>16.3.</strong> The challenge</a></li><li><a href="16-async-io-the-future/my-solution.html"><strong>16.4.</strong> My solution</a></li><li><a href="16-async-io-the-future/another-challenge.html"><strong>16.5.</strong> Another challenge</a></li><li><a href="16-async-io-the-future/my-other-solution.html"><strong>16.6.</strong> My other solution</a></li><li><a href="16-async-io-the-future/more-challenges.html"><strong>16.7.</strong> More challenges</a></li></ul></li><li><a href="explore.html">What's left for you to explore</a></li><li class="spacer"></li><li class="affix">Appendix</li><li class="affix"><a href="appendix/1-general-troubleshooting/README.html">General troubleshooting</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <h1><code>0xBAAAAAAD</code> address</h1>
+<p>Not all the peripheral memory can be accessed. Look at this program.</p>
+<pre><code class="language-rust">pub extern &quot;C&quot; fn main() -&gt; ! {
+    unsafe {
+        ptr::read_volatile(0x4800_1800 as *const u32);
+    }
+
+    loop {}
+}
+</code></pre>
+<p>This address is close to the <code>GPIOE_BSRR</code> address we used before but this
+address is &quot;invalid&quot;. Invalid in the sense that there's no register at this
+address.</p>
+<p>Now, let's try it. Make sure you have <code>itmdump</code> running.</p>
+<p>After executing the <code>read_volatile</code> statement, you should see this in
+<code>itmdump</code>'s console:</p>
+<pre><code># itmdump's console
+EXCEPTION HardFault @ PC=0x0800022a
+</code></pre>
+<p>We tried to do an invalid operation, reading memory that doesn't exist, so the
+processor raised an <em>exception</em>, a <em>hardware</em> exception.</p>
+<p>In most cases, exceptions are raised when the processor attempts to perform an
+invalid operation. Exceptions break the normal flow of a program and force the
+processor to execute an <em>exception handler</em>, which is just a
+function/subroutine.</p>
+<p>There are different kind of exceptions. Each kind of exception is raised by
+different conditions and each one is handled by a different exception handler.</p>
+<p>The <code>pg</code> crate provides a catch-all exception handler and that's what the
+processor executed upon encountering the &quot;invalid memory address&quot; exception.
+That handler is also what caused the <code>EXCEPTION</code> line to be printed to the ITM.</p>
+<p>This <code>EXCEPTION</code> line provides information about the exception. It tells us its
+kind: <code>HardFault</code> and which instruction caused the exception: the one at address
+<code>0x0800022a</code>.</p>
+<p>The exception handler also triggered a breakpoint (via <code>bkpt!()</code>) so the
+debugger should have halted your program while it was executing the exception
+handler.</p>
+<p>Let's disassemble the program around the bad instruction.</p>
+<pre><code>(gdb) disassemble /m 0x0800022a
+Dump of assembler code for function core::ptr::read_volatile&lt;u32&gt;:
+213     pub unsafe fn read_volatile&lt;T&gt;(src: *const T) -&gt; T {
+   0x0800021c &lt;+0&gt;:     sub     sp, #20
+   0x0800021e &lt;+2&gt;:     mov     r1, r0
+   0x08000220 &lt;+4&gt;:     str     r0, [sp, #16]
+   0x08000222 &lt;+6&gt;:     str     r1, [sp, #4]
+   0x08000224 &lt;+8&gt;:     b.n     0x8000226 &lt;core::ptr::read_volatile&lt;u32&gt;+10&gt;
+   0x08000226 &lt;+10&gt;:    ldr     r0, [sp, #16]
+   0x08000228 &lt;+12&gt;:    str     r0, [sp, #12]
+   0x0800022a &lt;+14&gt;:    ldr     r0, [r0, #0] &lt;--
+   0x0800022c &lt;+16&gt;:    str     r0, [sp, #8]
+   0x08000232 &lt;+22&gt;:    ldr     r0, [sp, #0]
+   0x08000234 &lt;+24&gt;:    add     sp, #20
+   0x08000236 &lt;+26&gt;:    bx      lr
+
+214         intrinsics::volatile_load(src)
+   0x0800022e &lt;+18&gt;:    str     r0, [sp, #0]
+   0x08000230 &lt;+20&gt;:    b.n     0x8000232 &lt;core::ptr::read_volatile&lt;u32&gt;+22&gt;
+</code></pre>
+<p>The exception was caused by a <code>ldr</code> instruction, a read instruction. The
+instruction tried to read the memory at the address indicated by the <code>r0</code>
+register. BTW, <code>r0</code> is a CPU (processor) register not a microcontroller
+register.</p>
+<p>Wouldn't it be nice if we could check what was the value of the <code>r0</code> register
+right at the instant at which the exception was raised? Well, we can!</p>
+<p>If you looked carefully at the GDB output right when the exception was hit, you
+probably saw this:</p>
+<pre><code>Program received signal SIGTRAP, Trace/breakpoint trap.
+f3::exception::default_handler (sf=0x20009fa0) at $F3/src/exception.rs:82
+</code></pre>
+<p>The exception handler we are in right now was called with an argument. Let's
+inspect that argument:</p>
+<pre><code>(gdb) p sf
+$5 = (cortex_m::StackFrame *) 0x20009fa8
+
+(gdb) p/x *sf
+$4 = cortex_m::StackFrame {
+  r0: 0x48001800,
+  r1: 0x48001800,
+  r2: 0xd,
+  r3: 0x40013800,
+  r12: 0x2,
+  lr: 0x8000217,
+  pc: 0x80001f4,
+  xpsr: 0x41000200
+}
+</code></pre>
+<p>This <code>StackFrame</code> struct contains the state of your program right before the
+exception was hit. There's an <code>r0</code> field in it. That's the value of <code>r0</code> right
+before the exception was raised. It contains the value <code>0x4800_1800</code> which is
+the invalid address we fed to the <code>read_volatile</code> function.</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="06-registers/optimization.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="06-registers/spooky-action-at-a-distance.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="06-registers/optimization.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="06-registers/spooky-action-at-a-distance.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

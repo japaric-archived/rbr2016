@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="README.html">Introduction</a></li><li><a href="01-installation-instructions/README.html"><strong>1.</strong> Installation instructions</a></li><li><ul class="section"><li><a href="01-installation-instructions/linux.html"><strong>1.1.</strong> Linux</a></li><li><a href="01-installation-instructions/windows.html"><strong>1.2.</strong> Windows</a></li><li><a href="01-installation-instructions/macos.html"><strong>1.3.</strong> macOS</a></li></ul></li><li><a href="02-meet-your-hardware/README.html"><strong>2.</strong> Meet your hardware</a></li><li><a href="03-verify-the-installation/README.html"><strong>3.</strong> Verify the installation</a></li><li><a href="04-led-roulette/README.html"><strong>4.</strong> LED roulette</a></li><li><ul class="section"><li><a href="04-led-roulette/build-it.html"><strong>4.1.</strong> Build it</a></li><li><a href="04-led-roulette/flash-it.html"><strong>4.2.</strong> Flash it</a></li><li><a href="04-led-roulette/debug-it.html"><strong>4.3.</strong> Debug it</a></li><li><a href="04-led-roulette/the-led-and-delay-modules.html"><strong>4.4.</strong> The <code>led</code> and <code>delay</code> modules</a></li><li><a href="04-led-roulette/the-challenge.html"><strong>4.5.</strong> The challenge</a></li><li><a href="04-led-roulette/my-solution.html"><strong>4.6.</strong> My solution</a></li></ul></li><li><a href="05-hello-world/README.html"><strong>5.</strong> Hello, world!</a></li><li><ul class="section"><li><a href="05-hello-world/panic.html"><strong>5.1.</strong> <code>panic!</code></a></li></ul></li><li><a href="06-registers/README.html"><strong>6.</strong> Registers</a></li><li><ul class="section"><li><a href="06-registers/rtrm.html"><strong>6.1.</strong> RTRM</a></li><li><a href="06-registers/optimization.html" class="active"><strong>6.2.</strong> (mis)Optimization</a></li><li><a href="06-registers/bad-address.html"><strong>6.3.</strong> <code>0xBAAAAAAD</code> address</a></li><li><a href="06-registers/spooky-action-at-a-distance.html"><strong>6.4.</strong> Spooky action at a distance</a></li><li><a href="06-registers/type-safe-manipulation.html"><strong>6.5.</strong> Type safe manipulation</a></li></ul></li><li><a href="07-leds-again/README.html"><strong>7.</strong> LEDs, again</a></li><li><ul class="section"><li><a href="07-leds-again/power.html"><strong>7.1.</strong> Power</a></li><li><a href="07-leds-again/configuration.html"><strong>7.2.</strong> Configuration</a></li></ul></li><li><a href="08-clocks-and-timers/README.html"><strong>8.</strong> Clocks and timers</a></li><li><ul class="section"><li><a href="08-clocks-and-timers/for-loop-delays.html"><strong>8.1.</strong> <code>for</code> loop delays</a></li><li><a href="08-clocks-and-timers/nop.html"><strong>8.2.</strong> NOP</a></li><li><a href="08-clocks-and-timers/one-shot-timer.html"><strong>8.3.</strong> One-shot timer</a></li><li><a href="08-clocks-and-timers/initialization.html"><strong>8.4.</strong> Initialization</a></li><li><a href="08-clocks-and-timers/busy-waiting.html"><strong>8.5.</strong> Busy waiting</a></li><li><a href="08-clocks-and-timers/putting-it-all-together.html"><strong>8.6.</strong> Putting it all together</a></li></ul></li><li><a href="09-serial-communication/README.html"><strong>9.</strong> &quot;Serial&quot; communication</a></li><li><ul class="section"><li><a href="09-serial-communication/nix-tooling.html"><strong>9.1.</strong> *nix tooling</a></li><li><a href="09-serial-communication/windows-tooling.html"><strong>9.2.</strong> Windows tooling</a></li><li><a href="09-serial-communication/loopbacks.html"><strong>9.3.</strong> Loopbacks</a></li></ul></li><li><a href="10-usart/README.html"><strong>10.</strong> USART</a></li><li><ul class="section"><li><a href="10-usart/send-a-single-byte.html"><strong>10.1.</strong> Send a single byte</a></li><li><a href="10-usart/send-a-string.html"><strong>10.2.</strong> Send a string</a></li><li><a href="10-usart/buffer-overrun.html"><strong>10.3.</strong> Buffer overrun</a></li><li><a href="10-usart/uprintln.html"><strong>10.4.</strong> <code>uprintln!</code></a></li><li><a href="10-usart/receive-a-single-byte.html"><strong>10.5.</strong> Receive a single byte</a></li><li><a href="10-usart/echo-server.html"><strong>10.6.</strong> Echo server</a></li><li><a href="10-usart/reverse-a-string.html"><strong>10.7.</strong> Reverse a string</a></li><li><a href="10-usart/my-solution.html"><strong>10.8.</strong> My solution</a></li></ul></li><li><a href="11-bluetooth-setup/README.html"><strong>11.</strong> Bluetooth setup</a></li><li><ul class="section"><li><a href="11-bluetooth-setup/linux.html"><strong>11.1.</strong> Linux</a></li><li><a href="11-bluetooth-setup/loopback.html"><strong>11.2.</strong> Loopback</a></li><li><strong>11.3.</strong> AT commands</li></ul></li><li><a href="12-serial-over-bluetooth/README.html"><strong>12.</strong> Serial over Bluetooth</a></li><li><a href="13-i2c/README.html"><strong>13.</strong> I2C</a></li><li><ul class="section"><li><a href="13-i2c/the-general-protocol.html"><strong>13.1.</strong> The general protocol</a></li><li><a href="13-i2c/lsm303dlhc.html"><strong>13.2.</strong> LSM303DLHC</a></li><li><a href="13-i2c/read-a-single-register.html"><strong>13.3.</strong> Read a single register</a></li><li><a href="13-i2c/the-solution.html"><strong>13.4.</strong> The solution</a></li><li><a href="13-i2c/read-several-registers.html"><strong>13.5.</strong> Read several registers</a></li></ul></li><li><a href="14-led-compass/README.html"><strong>14.</strong> LED compass</a></li><li><ul class="section"><li><a href="14-led-compass/take-1.html"><strong>14.1.</strong> Take 1</a></li><li><a href="14-led-compass/solution-1.html"><strong>14.2.</strong> Solution 1</a></li><li><a href="14-led-compass/take-2.html"><strong>14.3.</strong> Take 2</a></li><li><a href="14-led-compass/solution-2.html"><strong>14.4.</strong> Solution 2</a></li><li><a href="14-led-compass/magnitude.html"><strong>14.5.</strong> Magnitude</a></li><li><a href="14-led-compass/calibration.html"><strong>14.6.</strong> Calibration</a></li></ul></li><li><a href="15-punch-o-meter/README.html"><strong>15.</strong> Punch-o-meter</a></li><li><ul class="section"><li><a href="15-punch-o-meter/gravity-is-up.html"><strong>15.1.</strong> Gravity is up?</a></li><li><a href="15-punch-o-meter/the-challenge.html"><strong>15.2.</strong> The challenge</a></li><li><a href="15-punch-o-meter/my-solution.html"><strong>15.3.</strong> My solution</a></li></ul></li><li><a href="16-async-io-the-future/README.html"><strong>16.</strong> Async IO: The future</a></li><li><ul class="section"><li><a href="16-async-io-the-future/timer.html"><strong>16.1.</strong> Timer</a></li><li><a href="16-async-io-the-future/serial.html"><strong>16.2.</strong> Serial</a></li><li><a href="16-async-io-the-future/the-challenge.html"><strong>16.3.</strong> The challenge</a></li><li><a href="16-async-io-the-future/my-solution.html"><strong>16.4.</strong> My solution</a></li><li><a href="16-async-io-the-future/another-challenge.html"><strong>16.5.</strong> Another challenge</a></li><li><a href="16-async-io-the-future/my-other-solution.html"><strong>16.6.</strong> My other solution</a></li><li><a href="16-async-io-the-future/more-challenges.html"><strong>16.7.</strong> More challenges</a></li></ul></li><li><a href="explore.html">What's left for you to explore</a></li><li class="spacer"></li><li class="affix">Appendix</li><li class="affix"><a href="appendix/1-general-troubleshooting/README.html">General troubleshooting</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <h1>(mis)Optimization</h1>
+<p>Reads/writes to registers are quite special. I may even dare to say that they
+are embodiment of side effects. In the previous example we wrote four different
+values to the same register. If you didn't know that address was a register, you
+may have simplified the logic to just write the final value <code>1 &lt;&lt; (11 + 16)</code>
+into the register.</p>
+<p>Actually, LLVM does not know this is a register and will merge the writes thus
+changing the behavior of our program. Let's check that really quick.</p>
+<pre><code>$ xargo build --target thumbv7em-none-eabihf --release
+
+$ arm-none-eabi-gdb target/thumbv7em-none-eabihf/release/registers
+
+(gdb) disassemble /m
+Dump of assembler code for function main:
+   0x080001da &lt;+0&gt;:     movw    r0, #4120       ; 0x1018
+   0x080001de &lt;+4&gt;:     mov.w   r1, #134217728  ; 0x8000000
+=&gt; 0x080001e2 &lt;+8&gt;:     movt    r0, #18432      ; 0x4800
+   0x080001e6 &lt;+12&gt;:    str     r1, [r0, #0]
+   0x080001e8 &lt;+14&gt;:    b.n     0x80001e8 &lt;main+14&gt;
+End of assembler dump.
+
+(gdb) stepi
+0x080001e6 in main ()
+
+(gdb) stepi
+0x080001e8 in main ()
+</code></pre>
+<p>The state of the LEDs didn't change this time! The <code>str</code> instruction is the one
+that writes a value to the register. Our &quot;debug&quot; program had four of them, one
+for each write to the register, but the &quot;release&quot; program only has one.</p>
+<p>We can check that using <code>objdump</code>:</p>
+<pre><code>$ arm-none-eabi-objdump -Cd target/thumbv7em-none-eabihf/debug/registers
+0800021c &lt;main&gt;:
+ 800021c:       b082            sub     sp, #8
+ 800021e:       e7ff            b.n     8000220 &lt;main+0x4&gt;
+ 8000220:       e7ff            b.n     8000222 &lt;main+0x6&gt;
+ 8000222:       f241 0018       movw    r0, #4120       ; 0x1018
+ 8000226:       f6c4 0000       movt    r0, #18432      ; 0x4800
+ 800022a:       f44f 7100       mov.w   r1, #512        ; 0x200
+ 800022e:       6001            str     r1, [r0, #0] &lt;--
+ 8000230:       e7ff            b.n     8000232 &lt;main+0x16&gt;
+ 8000232:       f241 0018       movw    r0, #4120       ; 0x1018
+ 8000236:       f6c4 0000       movt    r0, #18432      ; 0x4800
+ 800023a:       f44f 6100       mov.w   r1, #2048       ; 0x800
+ 800023e:       6001            str     r1, [r0, #0] &lt;--
+ 8000240:       e7ff            b.n     8000242 &lt;main+0x26&gt;
+ 8000242:       e7ff            b.n     8000244 &lt;main+0x28&gt;
+ 8000244:       f241 0018       movw    r0, #4120       ; 0x1018
+ 8000248:       f6c4 0000       movt    r0, #18432      ; 0x4800
+ 800024c:       f04f 7100       mov.w   r1, #33554432   ; 0x2000000
+ 8000250:       6001            str     r1, [r0, #0] &lt;--
+ 8000252:       e7ff            b.n     8000254 &lt;main+0x38&gt;
+ 8000254:       e7ff            b.n     8000256 &lt;main+0x3a&gt;
+ 8000256:       f241 0018       movw    r0, #4120       ; 0x1018
+ 800025a:       f6c4 0000       movt    r0, #18432      ; 0x4800
+ 800025e:       f04f 6100       mov.w   r1, #134217728  ; 0x8000000
+ 8000262:       6001            str     r1, [r0, #0] &lt;--
+ 8000264:       e7ff            b.n     8000266 &lt;main+0x4a&gt;
+ 8000266:       e7fe            b.n     8000266 &lt;main+0x4a&gt;
+</code></pre>
+<p>How do we prevent LLVM from misoptimizing our program? We use <em>volatile</em>
+operations instead of plain reads/writes:</p>
+<pre><code class="language-rust">pub extern &quot;C&quot; fn main() -&gt; ! {
+    use core::ptr;
+
+    unsafe {
+        // A magic address!
+        const GPIOE_BSRR: u32 = 0x48001018;
+
+        // Turn on the &quot;North&quot; LED (red)
+        ptr::write_volatile(GPIOE_BSRR as *mut u32, 1 &lt;&lt; 9);
+
+        // Turn on the &quot;East&quot; LED (green)
+        ptr::write_volatile(GPIOE_BSRR as *mut u32, 1 &lt;&lt; 11);
+
+        // Turn off the &quot;North&quot; LED
+        ptr::write_volatile(GPIOE_BSRR as *mut u32, 1 &lt;&lt; (9 + 16));
+
+        // Turn on the &quot;East&quot; LED
+        ptr::write_volatile(GPIOE_BSRR as *mut u32, 1 &lt;&lt; (11 + 16));
+    }
+
+    loop {}
+}
+</code></pre>
+<p>If we look at the disassemble of this new program compiled in release mode:</p>
+<pre><code>$ arm-none-eabi-objdump -Cd target/thumbv7em-none-eabihf/release/registers
+
+080001da &lt;main&gt;:
+ 80001da:       f241 0018       movw    r0, #4120       ; 0x1018
+ 80001de:       f44f 7100       mov.w   r1, #512        ; 0x200
+ 80001e2:       f6c4 0000       movt    r0, #18432      ; 0x4800
+ 80001e6:       6001            str     r1, [r0, #0] &lt;--
+ 80001e8:       f44f 6100       mov.w   r1, #2048       ; 0x800
+ 80001ec:       6001            str     r1, [r0, #0] &lt;--
+ 80001ee:       f04f 7100       mov.w   r1, #33554432   ; 0x2000000
+ 80001f2:       6001            str     r1, [r0, #0] &lt;--
+ 80001f4:       f04f 6100       mov.w   r1, #134217728  ; 0x8000000
+ 80001f8:       6001            str     r1, [r0, #0] &lt;--
+ 80001fa:       e7fe            b.n     80001fa &lt;main+0x20&gt;
+</code></pre>
+<p>We see that the four writes (<code>str</code> instructions) are preserved. If you run it,
+you'll also see that behavior of the program is preserved.</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="06-registers/rtrm.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="06-registers/bad-address.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="06-registers/rtrm.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="06-registers/bad-address.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

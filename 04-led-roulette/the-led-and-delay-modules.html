@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+
+        <!-- MathJax -->
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = localStorage.getItem('theme');
+            if (theme == null) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = localStorage.getItem('sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="README.html">Introduction</a></li><li><a href="01-installation-instructions/README.html"><strong>1.</strong> Installation instructions</a></li><li><ul class="section"><li><a href="01-installation-instructions/linux.html"><strong>1.1.</strong> Linux</a></li><li><a href="01-installation-instructions/windows.html"><strong>1.2.</strong> Windows</a></li><li><a href="01-installation-instructions/macos.html"><strong>1.3.</strong> macOS</a></li></ul></li><li><a href="02-meet-your-hardware/README.html"><strong>2.</strong> Meet your hardware</a></li><li><a href="03-verify-the-installation/README.html"><strong>3.</strong> Verify the installation</a></li><li><a href="04-led-roulette/README.html"><strong>4.</strong> LED roulette</a></li><li><ul class="section"><li><a href="04-led-roulette/build-it.html"><strong>4.1.</strong> Build it</a></li><li><a href="04-led-roulette/flash-it.html"><strong>4.2.</strong> Flash it</a></li><li><a href="04-led-roulette/debug-it.html"><strong>4.3.</strong> Debug it</a></li><li><a href="04-led-roulette/the-led-and-delay-modules.html" class="active"><strong>4.4.</strong> The <code>led</code> and <code>delay</code> modules</a></li><li><a href="04-led-roulette/the-challenge.html"><strong>4.5.</strong> The challenge</a></li><li><a href="04-led-roulette/my-solution.html"><strong>4.6.</strong> My solution</a></li></ul></li><li><a href="05-hello-world/README.html"><strong>5.</strong> Hello, world!</a></li><li><ul class="section"><li><a href="05-hello-world/panic.html"><strong>5.1.</strong> <code>panic!</code></a></li></ul></li><li><a href="06-registers/README.html"><strong>6.</strong> Registers</a></li><li><ul class="section"><li><a href="06-registers/rtrm.html"><strong>6.1.</strong> RTRM</a></li><li><a href="06-registers/optimization.html"><strong>6.2.</strong> (mis)Optimization</a></li><li><a href="06-registers/bad-address.html"><strong>6.3.</strong> <code>0xBAAAAAAD</code> address</a></li><li><a href="06-registers/spooky-action-at-a-distance.html"><strong>6.4.</strong> Spooky action at a distance</a></li><li><a href="06-registers/type-safe-manipulation.html"><strong>6.5.</strong> Type safe manipulation</a></li></ul></li><li><a href="07-leds-again/README.html"><strong>7.</strong> LEDs, again</a></li><li><ul class="section"><li><a href="07-leds-again/power.html"><strong>7.1.</strong> Power</a></li><li><a href="07-leds-again/configuration.html"><strong>7.2.</strong> Configuration</a></li></ul></li><li><a href="08-clocks-and-timers/README.html"><strong>8.</strong> Clocks and timers</a></li><li><ul class="section"><li><a href="08-clocks-and-timers/for-loop-delays.html"><strong>8.1.</strong> <code>for</code> loop delays</a></li><li><a href="08-clocks-and-timers/nop.html"><strong>8.2.</strong> NOP</a></li><li><a href="08-clocks-and-timers/one-shot-timer.html"><strong>8.3.</strong> One-shot timer</a></li><li><a href="08-clocks-and-timers/initialization.html"><strong>8.4.</strong> Initialization</a></li><li><a href="08-clocks-and-timers/busy-waiting.html"><strong>8.5.</strong> Busy waiting</a></li><li><a href="08-clocks-and-timers/putting-it-all-together.html"><strong>8.6.</strong> Putting it all together</a></li></ul></li><li><a href="09-serial-communication/README.html"><strong>9.</strong> &quot;Serial&quot; communication</a></li><li><ul class="section"><li><a href="09-serial-communication/nix-tooling.html"><strong>9.1.</strong> *nix tooling</a></li><li><a href="09-serial-communication/windows-tooling.html"><strong>9.2.</strong> Windows tooling</a></li><li><a href="09-serial-communication/loopbacks.html"><strong>9.3.</strong> Loopbacks</a></li></ul></li><li><a href="10-usart/README.html"><strong>10.</strong> USART</a></li><li><ul class="section"><li><a href="10-usart/send-a-single-byte.html"><strong>10.1.</strong> Send a single byte</a></li><li><a href="10-usart/send-a-string.html"><strong>10.2.</strong> Send a string</a></li><li><a href="10-usart/buffer-overrun.html"><strong>10.3.</strong> Buffer overrun</a></li><li><a href="10-usart/uprintln.html"><strong>10.4.</strong> <code>uprintln!</code></a></li><li><a href="10-usart/receive-a-single-byte.html"><strong>10.5.</strong> Receive a single byte</a></li><li><a href="10-usart/echo-server.html"><strong>10.6.</strong> Echo server</a></li><li><a href="10-usart/reverse-a-string.html"><strong>10.7.</strong> Reverse a string</a></li><li><a href="10-usart/my-solution.html"><strong>10.8.</strong> My solution</a></li></ul></li><li><a href="11-bluetooth-setup/README.html"><strong>11.</strong> Bluetooth setup</a></li><li><ul class="section"><li><a href="11-bluetooth-setup/linux.html"><strong>11.1.</strong> Linux</a></li><li><a href="11-bluetooth-setup/loopback.html"><strong>11.2.</strong> Loopback</a></li><li><strong>11.3.</strong> AT commands</li></ul></li><li><a href="12-serial-over-bluetooth/README.html"><strong>12.</strong> Serial over Bluetooth</a></li><li><a href="13-i2c/README.html"><strong>13.</strong> I2C</a></li><li><ul class="section"><li><a href="13-i2c/the-general-protocol.html"><strong>13.1.</strong> The general protocol</a></li><li><a href="13-i2c/lsm303dlhc.html"><strong>13.2.</strong> LSM303DLHC</a></li><li><a href="13-i2c/read-a-single-register.html"><strong>13.3.</strong> Read a single register</a></li><li><a href="13-i2c/the-solution.html"><strong>13.4.</strong> The solution</a></li><li><a href="13-i2c/read-several-registers.html"><strong>13.5.</strong> Read several registers</a></li></ul></li><li><a href="14-led-compass/README.html"><strong>14.</strong> LED compass</a></li><li><ul class="section"><li><a href="14-led-compass/take-1.html"><strong>14.1.</strong> Take 1</a></li><li><a href="14-led-compass/solution-1.html"><strong>14.2.</strong> Solution 1</a></li><li><a href="14-led-compass/take-2.html"><strong>14.3.</strong> Take 2</a></li><li><a href="14-led-compass/solution-2.html"><strong>14.4.</strong> Solution 2</a></li><li><a href="14-led-compass/magnitude.html"><strong>14.5.</strong> Magnitude</a></li><li><a href="14-led-compass/calibration.html"><strong>14.6.</strong> Calibration</a></li></ul></li><li><a href="15-punch-o-meter/README.html"><strong>15.</strong> Punch-o-meter</a></li><li><ul class="section"><li><a href="15-punch-o-meter/gravity-is-up.html"><strong>15.1.</strong> Gravity is up?</a></li><li><a href="15-punch-o-meter/the-challenge.html"><strong>15.2.</strong> The challenge</a></li><li><a href="15-punch-o-meter/my-solution.html"><strong>15.3.</strong> My solution</a></li></ul></li><li><a href="16-async-io-the-future/README.html"><strong>16.</strong> Async IO: The future</a></li><li><ul class="section"><li><a href="16-async-io-the-future/timer.html"><strong>16.1.</strong> Timer</a></li><li><a href="16-async-io-the-future/serial.html"><strong>16.2.</strong> Serial</a></li><li><a href="16-async-io-the-future/the-challenge.html"><strong>16.3.</strong> The challenge</a></li><li><a href="16-async-io-the-future/my-solution.html"><strong>16.4.</strong> My solution</a></li><li><a href="16-async-io-the-future/another-challenge.html"><strong>16.5.</strong> Another challenge</a></li><li><a href="16-async-io-the-future/my-other-solution.html"><strong>16.6.</strong> My other solution</a></li><li><a href="16-async-io-the-future/more-challenges.html"><strong>16.7.</strong> More challenges</a></li></ul></li><li><a href="explore.html">What's left for you to explore</a></li><li class="spacer"></li><li class="affix">Appendix</li><li class="affix"><a href="appendix/1-general-troubleshooting/README.html">General troubleshooting</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <h1>The <code>led</code> and <code>delay</code> modules</h1>
+<p>Now, I'm going to introduce two high level modules that we'll use to implement
+the LED roulette application.</p>
+<p>The Playground crate, <code>pg</code>, exposes the <code>delay</code> and <code>led</code> modules.</p>
+<p>The <code>delay</code> module exposes a <code>ms</code> function that can block your program for <code>n</code>
+milliseconds.</p>
+<p>The <code>led</code> modules exposes a <code>LEDS</code> static variable that holds 8 <code>Led</code> <code>struct</code>s
+in an array. Each <code>Led</code> struct represents an LED on the F3 board and exposes two
+methods: <code>on</code> and <code>off</code> which can be used to turn the LED on or off,
+respectively.</p>
+<p>Let's try out this API by modifying the starter code to look like this:</p>
+<pre><code class="language-rust">#![deny(unsafe_code)]
+#![no_std]
+#![no_main]
+
+extern crate pg;
+
+use pg::delay;
+use pg::led::LEDS;
+
+#[export_name = &quot;main&quot;]
+#[inline(never)]
+pub extern &quot;C&quot; fn main() -&gt; ! {
+    let half_period = 500; // ms
+
+    loop {
+        LEDS[0].on();
+        delay::ms(half_period);
+
+        LEDS[0].off();
+        delay::ms(half_period);
+    }
+}
+</code></pre>
+<p>Now build it:</p>
+<pre><code>$ xargo build --target thumbv7em-none-eabihf
+</code></pre>
+<blockquote>
+<p><strong>NOTE</strong> It's quite common to forget to rebuild the program <em>before</em> starting
+a GDB session. This omission can lead to very confusing debug sessions. Always
+make sure to call <code>xargo build</code> <strong>before</strong> calling <code>gdb</code>.</p>
+</blockquote>
+<p>Now, we'll have to repeat the flashing procedure that we did in the previous
+section:</p>
+<pre><code>$ arm-none-eabi-gdb -q target/thumbv7em-none-eabihf/debug/led-roulette
+Reading symbols from target/thumbv7em-none-eabihf/debug/led-roulette...done.
+(gdb) target remote :3333
+Remote debugging using :3333
+(..)
+
+(gdb) load
+Loading section .text, size 0x76c8 lma 0x8000000
+Loading section .ARM.extab.text._ZN44_$LT$char$u20$as$u20$core..char..CharExt$GT$11encode_utf817h4f3134c02513b5e1E, size 0xc lma 0x80076c8
+Loading section .ARM.extab.text._ZN4core3fmt9Formatter11debug_tuple17hf0ed23ebdee33c00E, size 0xc lma 0x80076d4
+Start address 0x8000194, load size 30432
+Transfer rate: 22 KB/sec, 7608 bytes/write.
+
+(gdb) break main
+Breakpoint 1 at 0x80001e6: file /home/japaric/rust/rbr2016/src/04-led-roulette/src/main.rs, line 10.
+
+(gdb) continue
+Continuing.
+Note: automatically using hardware breakpoints for read-only addresses.
+
+Breakpoint 1, led_roulette::main () at /home/japaric/rust/rbr2016/src/04-led-roulette/src/main.rs:10
+10      pub extern &quot;C&quot; fn main() -&gt; ! {
+</code></pre>
+<p>OK. Let's step through the code. This time, we'll use the <code>next</code> command instead
+of <code>step</code>. The difference is that the <code>next</code> command will step <em>over</em> function
+calls instead of going inside them.</p>
+<pre><code>(gdb) next
+13          let half_period = 500; // ms
+
+(gdb) next
+15          loop {
+
+(gdb) next
+16              LEDS[0].on();
+
+(gdb) next
+17              delay::ms(half_period);
+</code></pre>
+<p>After executing the <code>LEDS[0].on()</code> statement, you should see a red LED, the one
+&quot;pointing North&quot;, turn on.</p>
+<p>Let's continue stepping over the program:</p>
+<pre><code>(gdb) next
+19              LEDS[0].off();
+
+(gdb) next
+20              delay::ms(half_period);
+</code></pre>
+<p>The <code>delay::ms</code> call will block the program for half a second but you may not
+notice because the <code>next</code> command also takes some time to execute. However,
+after stepping over the <code>LEDS[0].off()</code> statement you should see the red LED
+turn off.</p>
+<p>You can already guess what this program does. Let it run uninterrupted using the
+<code>continue</code> command.</p>
+<pre><code>(gdb) continue
+Continuing.
+</code></pre>
+<p>Now, let's do something more interesting. We are going to modify the behavior of
+our program using GDB.</p>
+<p>First, let's stop the infinite loop by hitting <code>Ctrl+C</code>. You'll probably end up
+somewhere inside <code>Led::on</code>, <code>Led::off</code> or <code>delay::ms</code>:</p>
+<pre><code>Program received signal SIGINT, Interrupt.
+0x08000d04 in core::ptr::read_volatile&lt;u32&gt; (src=0x40001410)
+    at $SYSROOT/lib/rustlib/src/rust/src/libcore/ptr.rs:213
+213     pub unsafe fn read_volatile&lt;T&gt;(src: *const T) -&gt; T {
+(gdb)
+</code></pre>
+<p>In my case, the program stopped its execution inside a <code>read_volatile</code> function.
+GDB output shows some interesting information about that:
+<code>core::ptr::read_volatile&lt;u32&gt; (src=0x40001410)</code>. This means that: the function
+comes from the <code>core</code> crate, it's originally a generic function but we are
+dealing with a <code>u32</code> instance of it and that it was called with argument <code>src = 0x40001410</code>.</p>
+<p>Just so you know, a more explicit way to show the arguments of a function is to
+use the <code>info args</code> command:</p>
+<pre><code>(gdb) info args
+src = 0x40001410
+</code></pre>
+<p>Regardless of where your program may have stopped you can always look at output
+of the <code>backtrace</code> command to learn how you got there:</p>
+<pre><code>(gdb) backtrace
+#0  0x08000d04 in core::ptr::read_volatile&lt;u32&gt; (src=0x40001410)
+    at $SYSROOT/lib/rustlib/src/rust/src/libcore/ptr.rs:213
+#1  0x08004280 in volatile_register::RW&lt;u32&gt;::read&lt;u32&gt; (self=&lt;optimized out&gt;)
+    at $VOLATILE_REGISTER/src/lib.rs:71
+#2  f3::peripheral::tim::Sr::read (self=0x40001410)
+    at $F3/master/src/peripheral/tim.rs:321
+#3  0x080014d6 in f3::delay::ms (n=500) at $F3/master/src/delay.rs:23
+#4  0x08000210 in led_roulette::main () at $PWD/src/main.rs:15
+</code></pre>
+<p><code>backtrace</code> will print back a trace of function calls that lead to the current
+program state.</p>
+<p>Back to our topic. To do what we are after, first, we have to return to the
+<code>main</code> function. We can do that using the <code>finish</code> command. This command resumes
+the program execution and stops it again right after the program returns from
+the current function. We'll have to call it several times.</p>
+<pre><code>(gdb) finish
+Run till exit from #0  0x08000d04 in core::ptr::read_volatile&lt;u32&gt; (src=0x40001410)
+    at $SYSROOT/lib/rustlib/src/rust/src/libcore/ptr.rs:213
+f3::peripheral::tim::Sr::read (self=0x40001410)
+    at $F3/master/src/peripheral/tim.rs:321
+321             SrR { bits: self.register.read() }
+Value returned is $1 = 0
+
+(gdb) finish
+Run till exit from #0  f3::peripheral::tim::Sr::read (self=0x40001410)
+    at $F3/src/peripheral/tim.rs:321
+0x080014d6 in f3::delay::ms (n=500) at $F3/src/delay.rs:23
+23              while !tim7.sr.read().uif() {}
+Value returned is $2 = f3::peripheral::tim::SrR {bits: 0}
+
+(gdb) finish
+Run till exit from #0  0x080014d6 in f3::delay::ms (n=500)
+    at $F3/src/delay.rs:23
+0x08000210 in led_roulette::main () at $PWD/src/main.rs:15
+15              delay::ms(half_period);
+</code></pre>
+<p>We are back in <code>main</code>. We have a local variable in here: <code>half_period</code></p>
+<pre><code>(gdb) info locals
+half_period = 500
+</code></pre>
+<p>Now, we are going to modify this variable using the <code>set</code> command:</p>
+<pre><code>(gdb) set half_period = 100
+
+(gdb) print half_period
+$1 = 100
+</code></pre>
+<p>If you let program run free again using the <code>continue</code> command, you should see
+that the LED will blink at a much faster rate now!</p>
+<p>Question! What happens if you keep lowering the value of <code>half_period</code>? At what
+value of <code>half_period</code> you can no longer see the LED blink?</p>
+<p>Now, it's your turn to write a program.</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a href="04-led-roulette/debug-it.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="04-led-roulette/the-challenge.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="04-led-roulette/debug-it.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="04-led-roulette/the-challenge.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>
